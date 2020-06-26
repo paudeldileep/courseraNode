@@ -14,9 +14,17 @@ app.use(express.static(__dirname + '/public'));
 
 app.use(bodyParser.json());
 
+//dishes route
 const dishRouter = require('./routes/dishRouter');
-
 app.use('/dishes', dishRouter);
+
+//promotions route
+const promoRouter = require('./routes/promoRouter');
+app.use('/promotions', promoRouter);
+
+//promotions route
+const leaderRouter = require('./routes/leaderRouter');
+app.use('/leaders', leaderRouter);
 
 const server = http.createServer(app);
 
